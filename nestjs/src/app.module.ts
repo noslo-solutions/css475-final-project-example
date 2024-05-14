@@ -25,6 +25,7 @@ import * as process from "process";
         password: !process.env.DATABASE_URL ? 'password' : null,
         database: !process.env.DATABASE_URL ?  'exampleDB' : null,
         autoLoadEntities: true,
+        ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
         // dropSchema: true,
         synchronize: true,
     }),
