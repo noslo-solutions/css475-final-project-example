@@ -14,7 +14,7 @@ services:
       - POSTGRES_DB=exampleDB
   nestjs:
     build:
-      dockerfile: nestjs/Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./:/usr/src/app
     depends_on:
