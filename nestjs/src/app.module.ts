@@ -12,19 +12,21 @@ import {MeetingsService} from "./meetings/meetings.service";
 import {EmployeesService} from "./employees/employees.service";
 import {Employee} from "./employees/entities/employee.entity";
 import {Meeting} from "./meetings/entities/meeting.entity";
+import * as process from "process";
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
         type: 'postgres',
-        host: 'postgres',
-        port: 5432,
-        username: 'postgres',
-        password: 'password',
-        database: 'exampleDB',
+        url: process.env.DATABASE_URL || null,
+        host: !process.env.DATABASE_URL ?  'postgres' : null,
+        port: !process.env.DATABASE_URL ? 5432 : null,
+        username: !process.env.DATABASE_URL ? 'postgres' : null,
+        password: !process.env.DATABASE_URL ? 'password' : null,
+        database: !process.env.DATABASE_URL ?  'exampleDB' : null,
         autoLoadEntities: true,
         // dropSchema: true,
-        // synchronize: true,
+        synchronize: true,
     }),
 
     TypeOrmModule.forFeature([Employee, Meeting]),
