@@ -27,7 +27,7 @@ import * as process from "process";
         autoLoadEntities: true,
         ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
         // dropSchema: true,
-        synchronize: true,
+        // synchronize: true,
     }),
 
     TypeOrmModule.forFeature([Employee, Meeting]),
