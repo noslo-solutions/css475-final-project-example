@@ -24,6 +24,13 @@ export class Meeting {
     })
     purpose: string;
 
+    @Column({
+        type: "varchar",
+        length: 30,
+        nullable: true,
+    })
+    demo_test: string;
+
     @ManyToMany(() => Employee, (employee) => employee.meetings)
     attendees: Employee[];
 

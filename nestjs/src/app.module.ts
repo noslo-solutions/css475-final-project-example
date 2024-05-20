@@ -13,6 +13,7 @@ import {EmployeesService} from "./employees/employees.service";
 import {Employee} from "./employees/entities/employee.entity";
 import {Meeting} from "./meetings/entities/meeting.entity";
 import * as process from "process";
+import {Customer} from "./customer.entity";
 
 @Module({
   imports: [
@@ -26,11 +27,11 @@ import * as process from "process";
         database: !process.env.DATABASE_URL ?  'exampleDB' : null,
         autoLoadEntities: true,
         ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-        // dropSchema: true,
-        // synchronize: true,
+        dropSchema: true,
+        synchronize: true,
     }),
 
-    TypeOrmModule.forFeature([Employee, Meeting]),
+    TypeOrmModule.forFeature([Employee, Meeting, Customer]),
     DepartmentsModule,
     EmployeesModule,
     PhonesModule,

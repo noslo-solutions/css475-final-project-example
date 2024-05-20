@@ -25,7 +25,4 @@ export class Room {
         nullable: true,
     })
     capacity: number|null;
-
-    @OneToMany(() => Meeting, (meeting) => meeting.room)
-    meetings: Meeting[];
 }
