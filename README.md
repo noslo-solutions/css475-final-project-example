@@ -24,8 +24,8 @@ docker-compose up
 ```
 
 ### Helpful information
-- Loom video going over application
-- [Spring Initializr]((https://start.spring.io/)) to create package for the first application
+- [Loom video](https://www.loom.com/share/1e838d1d3f954883ab0e383c649e74b2) going over application
+- [Django gettings started](https://www.djangoproject.com/start/)
 
 ## Java Sprint Boot
 
@@ -38,6 +38,6 @@ docker-compose up --build
 ```
 
 ### Helpful information
-- Loom video going over application
+- [Loom video](https://www.loom.com/share/b951665160e34b5cb67ebd7b5013a018) going over application
 - [Spring Initializr](https://start.spring.io/) to create package for the first application
   
