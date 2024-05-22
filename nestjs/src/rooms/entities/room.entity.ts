@@ -1,5 +1,5 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
-import {Meeting} from "../../meetings/entities/meeting.entity";
+import { Meeting } from "../../meetings/entities/meeting.entity";
 
 @Entity('room')
 export class Room {
@@ -25,4 +25,7 @@ export class Room {
         nullable: true,
     })
     capacity: number|null;
+
+    @OneToMany(() => Meeting, (meeting) => meeting.room)
+    meetings: Meeting[];
 }

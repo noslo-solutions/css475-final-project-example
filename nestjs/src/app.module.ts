@@ -13,7 +13,6 @@ import {EmployeesService} from "./employees/employees.service";
 import {Employee} from "./employees/entities/employee.entity";
 import {Meeting} from "./meetings/entities/meeting.entity";
 import * as process from "process";
-import {Customer} from "./customer.entity";
 
 @Module({
   imports: [
@@ -31,7 +30,7 @@ import {Customer} from "./customer.entity";
         synchronize: true,
     }),
 
-    TypeOrmModule.forFeature([Employee, Meeting, Customer]),
+    TypeOrmModule.forFeature([Employee, Meeting]),
     DepartmentsModule,
     EmployeesModule,
     PhonesModule,
