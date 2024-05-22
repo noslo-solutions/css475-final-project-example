@@ -20,6 +20,7 @@ This will start the NestJS server and create all the tables for you. To add seed
 ### Running locally 
 To run this locally you can utilize Docker Compose by opening your terminal and running the following:
 ```bash
+npm i
 docker-compose up
 ```
 
@@ -34,6 +35,10 @@ docker-compose up
 ### Running locally 
 To run this locally you can utilize Docker Compose by opening your terminal and running the following:
 ```bash
+# first you will need to run the migrations, this will create the room table locally
+docker-compose run web python manage.py migrate
+
+# then build the local images and start the containers
 docker-compose up --build
 ```
 
